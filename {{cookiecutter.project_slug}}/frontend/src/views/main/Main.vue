@@ -117,9 +117,9 @@
         </v-list>
       </v-menu>
     </v-app-bar>
-    <v-content>
+    <v-main>
       <router-view></router-view>
-    </v-content>
+    </v-main>
     <v-footer class="pa-3" fixed app>
       <v-spacer></v-spacer>
       <span>&copy; {{ appName }}</span>

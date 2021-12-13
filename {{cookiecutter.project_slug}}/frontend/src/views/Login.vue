@@ -1,5 +1,5 @@
 <template>
-  <v-content>
+  <v-main>
     <v-container fluid fill-height>
       <v-row align="center" justify="center">
         <v-col cols="12">
@@ -47,7 +47,7 @@
         </v-col>
       </v-row>
     </v-container>
-  </v-content>
+  </v-main>
 </template>
 
 <script lang="ts">
