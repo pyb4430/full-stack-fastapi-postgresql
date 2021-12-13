@@ -7,7 +7,9 @@
         indeterminate
       ></v-progress-circular
       >{{ currentNotificationContent }}
-      <v-btn flat @click.native="close">Close</v-btn>
+      <template #action="{ attrs }">
+        <v-btn v-bind="attrs" text @click.native="close">Close</v-btn>
+      </template>
     </v-snackbar>
   </div>
 </template>

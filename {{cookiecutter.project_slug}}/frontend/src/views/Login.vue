@@ -12,7 +12,7 @@
               <v-form @keyup.enter="submit">
                 <v-text-field
                   v-model="email"
-                  prepend-icon="person"
+                  prepend-icon="mdi-account"
                   name="login"
                   label="Login"
                   type="text"
@@ -21,7 +21,7 @@
                 <v-text-field
                   id="password"
                   v-model="password"
-                  prepend-icon="lock"
+                  prepend-icon="mdi-lock"
                   name="password"
                   label="Password"
                   type="password"

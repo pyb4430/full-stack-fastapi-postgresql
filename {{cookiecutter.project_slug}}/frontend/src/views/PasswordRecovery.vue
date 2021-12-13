@@ -23,7 +23,7 @@
                       v-model="username"
                       label="Username"
                       type="text"
-                      prepend-icon="person"
+                      prepend-icon="mdi-account"
                       :error-messages="errors"
                       required
                       @keyup.enter="submit"

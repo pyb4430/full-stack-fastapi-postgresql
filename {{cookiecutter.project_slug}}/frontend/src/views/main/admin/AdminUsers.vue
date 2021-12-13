@@ -6,24 +6,24 @@
       <v-btn color="primary" to="/main/admin/users/create">Create User</v-btn>
     </v-toolbar>
     <v-data-table :headers="headers" :items="users">
-      <template slot="items" slot-scope="props">
-        <td>{{ props.item.name }}</td>
-        <td>{{ props.item.email }}</td>
-        <td>{{ props.item.full_name }}</td>
-        <td><v-icon v-if="props.item.is_active">checkmark</v-icon></td>
-        <td><v-icon v-if="props.item.is_superuser">checkmark</v-icon></td>
-        <td class="justify-center layout px-0">
-          <v-tooltip top>
-            <span>Edit</span>
-            <v-btn
-              slot="activator"
-              flat
-              :to="{ name: 'main-admin-users-edit', params: { id: props.item.id } }"
-            >
-              <v-icon>edit</v-icon>
-            </v-btn>
-          </v-tooltip>
-        </td>
+      <!-- eslint-disable-next-line vue/valid-v-slot -->
+      <template #item.is_active="{ item }">
+        <v-icon v-if="item.is_active">mdi-check</v-icon>
+      </template>
+      <!-- eslint-disable-next-line vue/valid-v-slot -->
+      <template #item.is_superuser="{ item }">
+        <v-icon v-if="item.is_superuser">mdi-check</v-icon>
+      </template>
+      <!-- eslint-disable-next-line vue/valid-v-slot -->
+      <template #item.actions="{ item }">
+        <v-btn
+          slot="activator"
+          flat
+          icon
+          :to="{ name: 'main-admin-users-edit', params: { id: item.id } }"
+        >
+          <v-icon>mdi-pencil</v-icon>
+        </v-btn>
       </template>
     </v-data-table>
   </div>
@@ -40,7 +40,7 @@ export default class AdminUsers extends Vue {
     {
       text: "Name",
       sortable: true,
-      value: "name",
+      value: "full_name",
       align: "left",
     },
     {
@@ -58,18 +58,19 @@ export default class AdminUsers extends Vue {
     {
       text: "Is Active",
       sortable: true,
-      value: "isActive",
+      value: "is_active",
       align: "left",
     },
     {
       text: "Is Superuser",
       sortable: true,
-      value: "isSuperuser",
+      value: "is_superuser",
       align: "left",
     },
     {
       text: "Actions",
-      value: "id",
+      value: "actions",
+      sortable: false,
     },
   ];
   get users() {
