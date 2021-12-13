@@ -1,5 +1,3 @@
-
-
 module.exports = {
   chainWebpack: (config) => {
     config.module
