@@ -18,7 +18,6 @@
       <template #item.actions="{ item }">
         <v-btn
           slot="activator"
-          flat
           icon
           :to="{ name: 'main-admin-users-edit', params: { id: item.id } }"
         >

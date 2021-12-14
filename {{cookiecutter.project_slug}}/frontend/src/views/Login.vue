@@ -2,7 +2,7 @@
   <v-main>
     <v-container fluid fill-height>
       <v-row align="center" justify="center">
-        <v-col cols="12">
+        <v-col cols="12" sm="8" md="6" l="5" xl="4">
           <v-card class="elevation-12">
             <v-toolbar dark color="primary">
               <v-toolbar-title>{{ appName }}</v-toolbar-title>
@@ -33,10 +33,10 @@
                   Incorrect email or password
                 </v-alert>
               </div>
-              <v-flex class="caption text-xs-right"
+              <v-col class="caption text-xs-right"
                 ><router-link to="/recover-password"
                   >Forgot your password?</router-link
-                ></v-flex
+                ></v-col
               >
             </v-card-text>
             <v-card-actions>
