@@ -7,9 +7,9 @@ const defaultState: AdminState = {
   users: [],
 };
 
-export const adminModule = {
-  state: defaultState,
+export const createAdminModule = () => ({
+  state: { ...defaultState },
   mutations,
   actions,
   getters,
-};
+});

@@ -1,18 +1,20 @@
 import Vue from "vue";
 import Vuex, { StoreOptions } from "vuex";
 
-import { mainModule } from "./main";
+import { createMainModule } from "./main";
 import { State } from "./state";
-import { adminModule } from "./admin";
+import { createAdminModule } from "./admin";
 
 Vue.use(Vuex);
 
-const storeOptions: StoreOptions<State> = {
+export const createStoreOptions = () => ({
   modules: {
-    main: mainModule,
-    admin: adminModule,
+    main: createMainModule(),
+    admin: createAdminModule(),
   },
-};
+});
+
+const storeOptions: StoreOptions<State> = createStoreOptions();
 
 export const store = new Vuex.Store<State>(storeOptions);
 

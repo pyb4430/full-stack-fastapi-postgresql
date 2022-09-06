@@ -3,7 +3,7 @@ import { getters } from "./getters";
 import { actions } from "./actions";
 import { MainState } from "./state";
 
-const defaultState: MainState = {
+const createDefaultState: () => MainState = () => ({
   isLoggedIn: null,
   token: "",
   logInError: false,
@@ -11,11 +11,11 @@ const defaultState: MainState = {
   dashboardMiniDrawer: false,
   dashboardShowDrawer: true,
   notifications: [],
-};
+});
 
-export const mainModule = {
-  state: defaultState,
+export const createMainModule = () => ({
+  state: createDefaultState(),
   mutations,
   actions,
   getters,
-};
+});
