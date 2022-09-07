@@ -115,11 +115,14 @@ services:
     networks:
       - ${TRAEFIK_PUBLIC_NETWORK?Variable not set}
       - default
+    depends_on:
+      - queue
     env_file:
       - .env
     environment:
-      - CELERY_BROKER_URL=amqp://guest@queue:5672//
-    command: celery flower --broker_api=http://guest:guest@queue:15672/api//
+      - CELERY_BROKER_URL=amqp://guest:guest@queue:5672//
+    # The sleep used below helps address https://github.com/mher/flower/issues/1112
+    command: /bin/sh -c "sleep 5s && celery flower --broker_api=http://guest:guest@queue:15672/api//"
       # For the "Broker" tab to work in the flower UI, use the following command argument,
       # and change the queue service's image as well
       # --broker_api=http://guest:guest@queue:15672/api//
