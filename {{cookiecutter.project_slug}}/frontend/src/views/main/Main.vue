@@ -89,7 +89,7 @@
     </v-navigation-drawer>
     <v-app-bar dark color="primary" app>
       <v-app-bar-nav-icon @click.stop="switchShowDrawer"></v-app-bar-nav-icon>
-      <v-toolbar-title v-text="appName"></v-toolbar-title>
+      <v-toolbar-title>{{ appName }}</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-menu bottom left offset-y>
         <template #activator="{ on }">
