@@ -14,5 +14,7 @@ config > docker-stack.yml
 docker-compose -f docker-stack.yml build
 docker-compose -f docker-stack.yml down -v --remove-orphans # Remove possibly previous broken stacks left hanging after an error
 docker-compose -f docker-stack.yml up -d
+# A non-fix for test_celery.py failure
+sleep 2
 docker-compose -f docker-stack.yml exec -T backend bash /app/tests-start.sh "$@"
 docker-compose -f docker-stack.yml down -v --remove-orphans
