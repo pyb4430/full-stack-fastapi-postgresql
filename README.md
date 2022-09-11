@@ -4,6 +4,8 @@
 
 Generate a backend and frontend stack using Python, including interactive API documentation.
 
+** This is a fork of [tiangolo/full-stack-fastapi-postgresql](https://github.com/tiangolo/full-stack-fastapi-postgresql), which hasn't seen an update in a while **
+
 ### Interactive API documentation
 
 [![API docs](img/docs.png)](https://github.com/tiangolo/full-stack-fastapi-postgresql)
@@ -143,7 +145,17 @@ After using this generator, your new project (the directory created) will contai
 
 ## Release Notes
 
-### Latest Changes
+### 0.6.0
+
+* Updated to python 3.10
+* Updated backend dependencies
+* Updated frontend dependencies where possible
+* Refactored frontend to support Vuetify 2 and Vee-Validate 3, using [165](https://github.com/tiangolo/full-stack-fastapi-postgresql/pull/165) as a guide (also included the eslint and prettier additions)
+* Incorporated the steps in [tiangolo/uvicorn-gunicorn-docker](https://github.com/tiangolo/uvicorn-gunicorn-docker) into `backend.dockerfile`, so that the update to python 3.10 was possible. `start.sh`, `start-reload.sh`, and `gunicorn_conf.py` from that repo were added to backend
+* Updated the base image for the build stage in the frontend `Dockerfile` to `node:18`, no longer the outdated [tiangolo/node-frontend](https://github.com/tiangolo/node-frontend)
+* A handfuls of issue fixes
+
+### Below changes are from tiangolo/full-stack-fastapi-postgresql
 
 * Update issue-manager. PR [#211](https://github.com/tiangolo/full-stack-fastapi-postgresql/pull/211).
 * Add [GitHub Sponsors](https://github.com/sponsors/tiangolo) button. PR [#201](https://github.com/tiangolo/full-stack-fastapi-postgresql/pull/201).
