@@ -4,7 +4,7 @@
 
 Generate a backend and frontend stack using Python, including interactive API documentation.
 
-** This is a fork of [tiangolo/full-stack-fastapi-postgresql](https://github.com/tiangolo/full-stack-fastapi-postgresql), which hasn't seen an update in a while **
+**This is a fork of [tiangolo/full-stack-fastapi-postgresql](https://github.com/tiangolo/full-stack-fastapi-postgresql), which hasn't seen an update in a while**
 
 ### Interactive API documentation
 
